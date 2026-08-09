@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+data/raw/*.csv
+data/processed/*.csv
+data/processed/*.pkl
+.env
+.vscode/
+.DS_Store
+node_modules/
+backend/node_modules/

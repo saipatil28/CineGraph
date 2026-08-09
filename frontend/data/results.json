@@ -1,0 +1,1449 @@
+{
+  "overview": {
+    "total_movies": 4802,
+    "date_range": [
+      1916,
+      2017
+    ],
+    "total_revenue_tracked": 395097845825.0
+  },
+  "regression": {
+    "hindsight": {
+      "r2": 0.71793951584069,
+      "mae": 55522094.088522546,
+      "top_features": [
+        {
+          "name": "vote_count",
+          "importance": 0.5456852361013377
+        },
+        {
+          "name": "budget",
+          "importance": 0.2387951223483734
+        },
+        {
+          "name": "popularity",
+          "importance": 0.058589360960925395
+        },
+        {
+          "name": "release_year",
+          "importance": 0.03873899751291616
+        },
+        {
+          "name": "runtime",
+          "importance": 0.038559215449541384
+        },
+        {
+          "name": "genre_Adventure",
+          "importance": 0.018942757643557545
+        },
+        {
+          "name": "genre_Family",
+          "importance": 0.01261378999266409
+        },
+        {
+          "name": "genre_Drama",
+          "importance": 0.006008784582940127
+        }
+      ]
+    },
+    "pre_release": {
+      "r2": 0.5210569942481205,
+      "mae": 84894736.93957232,
+      "top_features": [
+        {
+          "name": "budget",
+          "importance": 0.5879558293023059
+        },
+        {
+          "name": "runtime",
+          "importance": 0.12151300709280331
+        },
+        {
+          "name": "release_year",
+          "importance": 0.09385811020010996
+        },
+        {
+          "name": "num_production_companies",
+          "importance": 0.05302441962880376
+        },
+        {
+          "name": "genre_Adventure",
+          "importance": 0.01655964314932489
+        },
+        {
+          "name": "genre_Drama",
+          "importance": 0.015805165875010397
+        },
+        {
+          "name": "genre_Animation",
+          "importance": 0.014300678139789143
+        },
+        {
+          "name": "genre_Science Fiction",
+          "importance": 0.014119377072010079
+        }
+      ]
+    }
+  },
+  "fuzzy": {
+    "budget_min": 150000.0,
+    "budget_max": 200000000.0,
+    "genre_popularity": [
+      {
+        "genre": "Animation",
+        "score": 100.0
+      },
+      {
+        "genre": "Adventure",
+        "score": 87.5
+      },
+      {
+        "genre": "Fantasy",
+        "score": 83.7
+      },
+      {
+        "genre": "Family",
+        "score": 78.0
+      },
+      {
+        "genre": "Science Fiction",
+        "score": 66.3
+      },
+      {
+        "genre": "Action",
+        "score": 62.0
+      },
+      {
+        "genre": "Thriller",
+        "score": 38.2
+      },
+      {
+        "genre": "Comedy",
+        "score": 37.2
+      },
+      {
+        "genre": "Mystery",
+        "score": 36.1
+      },
+      {
+        "genre": "War",
+        "score": 35.6
+      },
+      {
+        "genre": "Romance",
+        "score": 31.4
+      },
+      {
+        "genre": "Crime",
+        "score": 30.2
+      },
+      {
+        "genre": "Drama",
+        "score": 27.6
+      },
+      {
+        "genre": "History",
+        "score": 26.6
+      },
+      {
+        "genre": "Music",
+        "score": 25.9
+      },
+      {
+        "genre": "Horror",
+        "score": 23.0
+      },
+      {
+        "genre": "Western",
+        "score": 21.6
+      },
+      {
+        "genre": "Documentary",
+        "score": 7.6
+      },
+      {
+        "genre": "Foreign",
+        "score": 0.0
+      }
+    ],
+    "examples": [
+      {
+        "label": "Big-budget Adventure, many studios",
+        "budget": 160000000.0,
+        "genre": "Adventure",
+        "studios": 8,
+        "score": 77.4,
+        "category": "High"
+      },
+      {
+        "label": "Low-budget Horror, few studios",
+        "budget": 10142500.0,
+        "genre": "Horror",
+        "studios": 1,
+        "score": 22.7,
+        "category": "Low"
+      },
+      {
+        "label": "Mid-budget Comedy, some studios",
+        "budget": 80090000.0,
+        "genre": "Comedy",
+        "studios": 3,
+        "score": 42.7,
+        "category": "Medium"
+      }
+    ]
+  },
+  "association_rules": {
+    "genre_rules": [
+      {
+        "antecedents": [
+          "Genre_Animation"
+        ],
+        "consequents": [
+          "Genre_Family",
+          "Success_High"
+        ],
+        "support": 0.03,
+        "confidence": 0.534,
+        "lift": 10.48
+      },
+      {
+        "antecedents": [
+          "Genre_Adventure",
+          "Genre_Science Fiction"
+        ],
+        "consequents": [
+          "Genre_Action",
+          "Success_High"
+        ],
+        "support": 0.024,
+        "confidence": 0.42,
+        "lift": 4.1
+      },
+      {
+        "antecedents": [
+          "Genre_Adventure",
+          "Genre_Thriller"
+        ],
+        "consequents": [
+          "Genre_Action",
+          "Success_High"
+        ],
+        "support": 0.021,
+        "confidence": 0.391,
+        "lift": 3.83
+      },
+      {
+        "antecedents": [
+          "Genre_Action",
+          "Genre_Science Fiction"
+        ],
+        "consequents": [
+          "Genre_Adventure",
+          "Success_High"
+        ],
+        "support": 0.024,
+        "confidence": 0.324,
+        "lift": 3.41
+      },
+      {
+        "antecedents": [
+          "Genre_Adventure",
+          "Genre_Thriller"
+        ],
+        "consequents": [
+          "Genre_Action",
+          "Success_NotHigh"
+        ],
+        "support": 0.029,
+        "confidence": 0.522,
+        "lift": 2.96
+      },
+      {
+        "antecedents": [
+          "Genre_Drama",
+          "Genre_Thriller"
+        ],
+        "consequents": [
+          "Genre_Crime",
+          "Success_NotHigh"
+        ],
+        "support": 0.041,
+        "confidence": 0.348,
+        "lift": 2.74
+      },
+      {
+        "antecedents": [
+          "Genre_Comedy",
+          "Genre_Drama"
+        ],
+        "consequents": [
+          "Genre_Romance",
+          "Success_NotHigh"
+        ],
+        "support": 0.037,
+        "confidence": 0.364,
+        "lift": 2.58
+      },
+      {
+        "antecedents": [
+          "Genre_Action",
+          "Genre_Crime"
+        ],
+        "consequents": [
+          "Genre_Thriller",
+          "Success_NotHigh"
+        ],
+        "support": 0.035,
+        "confidence": 0.527,
+        "lift": 2.45
+      },
+      {
+        "antecedents": [
+          "Genre_Animation",
+          "Genre_Family"
+        ],
+        "consequents": [
+          "Success_High"
+        ],
+        "support": 0.03,
+        "confidence": 0.612,
+        "lift": 2.45
+      },
+      {
+        "antecedents": [
+          "Genre_Horror"
+        ],
+        "consequents": [
+          "Genre_Thriller",
+          "Success_NotHigh"
+        ],
+        "support": 0.053,
+        "confidence": 0.519,
+        "lift": 2.41
+      }
+    ],
+    "person_rules": [
+      {
+        "antecedents": [
+          "Director_Steven Spielberg"
+        ],
+        "consequents": [
+          "Success_High"
+        ],
+        "support": 0.007,
+        "confidence": 0.852,
+        "lift": 3.41
+      },
+      {
+        "antecedents": [
+          "Actor_Tom Cruise"
+        ],
+        "consequents": [
+          "Success_High"
+        ],
+        "support": 0.007,
+        "confidence": 0.828,
+        "lift": 3.31
+      },
+      {
+        "antecedents": [
+          "Actor_Robert De Niro"
+        ],
+        "consequents": [
+          "Success_NotHigh"
+        ],
+        "support": 0.011,
+        "confidence": 0.783,
+        "lift": 1.04
+      },
+      {
+        "antecedents": [
+          "Actor_Matt Damon"
+        ],
+        "consequents": [
+          "Success_NotHigh"
+        ],
+        "support": 0.006,
+        "confidence": 0.618,
+        "lift": 0.82
+      },
+      {
+        "antecedents": [
+          "Actor_Morgan Freeman"
+        ],
+        "consequents": [
+          "Success_NotHigh"
+        ],
+        "support": 0.006,
+        "confidence": 0.618,
+        "lift": 0.82
+      }
+    ]
+  },
+  "graph": {
+    "node_count": 1813,
+    "edge_count": 23633,
+    "top_bridges": [
+      {
+        "person": "Robert De Niro",
+        "score": 0.0196
+      },
+      {
+        "person": "Samuel L. Jackson",
+        "score": 0.016
+      },
+      {
+        "person": "Bruce Willis",
+        "score": 0.0125
+      },
+      {
+        "person": "Morgan Freeman",
+        "score": 0.0102
+      },
+      {
+        "person": "Mark Wahlberg",
+        "score": 0.0097
+      },
+      {
+        "person": "Matt Damon",
+        "score": 0.0095
+      },
+      {
+        "person": "Willem Dafoe",
+        "score": 0.0092
+      },
+      {
+        "person": "Christopher Plummer",
+        "score": 0.0092
+      },
+      {
+        "person": "Matthew McConaughey",
+        "score": 0.0091
+      },
+      {
+        "person": "Alec Baldwin",
+        "score": 0.0091
+      },
+      {
+        "person": "Sandra Bullock",
+        "score": 0.0088
+      },
+      {
+        "person": "Tom Hanks",
+        "score": 0.0087
+      }
+    ],
+    "top_collaborators": [
+      {
+        "person": "Robert De Niro",
+        "collaborations": 209
+      },
+      {
+        "person": "Samuel L. Jackson",
+        "collaborations": 160
+      },
+      {
+        "person": "Matt Damon",
+        "collaborations": 145
+      },
+      {
+        "person": "Bruce Willis",
+        "collaborations": 140
+      },
+      {
+        "person": "Brad Pitt",
+        "collaborations": 133
+      },
+      {
+        "person": "Nicolas Cage",
+        "collaborations": 132
+      },
+      {
+        "person": "Johnny Depp",
+        "collaborations": 130
+      },
+      {
+        "person": "Morgan Freeman",
+        "collaborations": 130
+      },
+      {
+        "person": "Mark Wahlberg",
+        "collaborations": 125
+      },
+      {
+        "person": "Cameron Diaz",
+        "collaborations": 122
+      },
+      {
+        "person": "Owen Wilson",
+        "collaborations": 122
+      },
+      {
+        "person": "Ben Stiller",
+        "collaborations": 118
+      }
+    ],
+    "communities": [
+      {
+        "size": 94,
+        "sample_members": [
+          "Actor: Abbie Cornish",
+          "Actor: Alan Alda",
+          "Actor: Amy Adams",
+          "Actor: Andie MacDowell",
+          "Actor: Angelina Jolie",
+          "Actor: Barbra Streisand",
+          "Actor: Ben Foster",
+          "Actor: Ben Stiller",
+          "Actor: Billy Crystal",
+          "Actor: Bradley Cooper"
+        ]
+      },
+      {
+        "size": 75,
+        "sample_members": [
+          "Actor: Abigail Breslin",
+          "Actor: Amanda Peet",
+          "Actor: Anne Archer",
+          "Actor: Bill Pullman",
+          "Actor: Billy Dee Williams",
+          "Actor: Bob Hoskins",
+          "Actor: Breckin Meyer",
+          "Actor: Carrie Fisher",
+          "Actor: Christopher Plummer",
+          "Actor: Dan Aykroyd"
+        ]
+      },
+      {
+        "size": 68,
+        "sample_members": [
+          "Actor: Adam Sandler",
+          "Actor: Alexa PenaVega",
+          "Actor: Anne Hathaway",
+          "Actor: Antonio Banderas",
+          "Actor: Cameron Diaz",
+          "Actor: Carla Gugino",
+          "Actor: Daryl Sabara",
+          "Actor: David Spade",
+          "Actor: Delroy Lindo",
+          "Actor: Denzel Washington"
+        ]
+      },
+      {
+        "size": 68,
+        "sample_members": [
+          "Actor: Alan Arkin",
+          "Actor: Alec Baldwin",
+          "Actor: Andy Garc\u00eda",
+          "Actor: Anjelica Huston",
+          "Actor: Bill Murray",
+          "Actor: Brad Pitt",
+          "Actor: Brian Cox",
+          "Actor: Cate Blanchett",
+          "Actor: Catherine Zeta-Jones",
+          "Actor: Channing Tatum"
+        ]
+      },
+      {
+        "size": 62,
+        "sample_members": [
+          "Actor: Aidan Quinn",
+          "Actor: Alfred Molina",
+          "Actor: Amanda Seyfried",
+          "Actor: Boyd Holbrook",
+          "Actor: Brent Spiner",
+          "Actor: Chlo\u00eb Sevigny",
+          "Actor: Christopher Walken",
+          "Actor: Danny DeVito",
+          "Actor: Elijah Wood",
+          "Actor: Famke Janssen"
+        ]
+      },
+      {
+        "size": 58,
+        "sample_members": [
+          "Actor: Amy Poehler",
+          "Actor: Andrew Garfield",
+          "Actor: Andy Samberg",
+          "Actor: Anna Faris",
+          "Actor: Ashley Tisdale",
+          "Actor: Barbara Hershey",
+          "Actor: Benicio del Toro",
+          "Actor: Bill Hader",
+          "Actor: Bruce Campbell",
+          "Actor: Campbell Scott"
+        ]
+      }
+    ]
+  },
+  "anomalies": {
+    "sleeper_hits": [
+      {
+        "title": "Gone with the Wind",
+        "year": 1939,
+        "budget": 4000000.0,
+        "revenue": 400176459.0,
+        "predicted_revenue": 32242742.185,
+        "genres": [
+          "Drama",
+          "Romance",
+          "War"
+        ]
+      },
+      {
+        "title": "Slumdog Millionaire",
+        "year": 2008,
+        "budget": 15000000.0,
+        "revenue": 377910544.0,
+        "predicted_revenue": 32534070.715,
+        "genres": [
+          "Drama",
+          "Romance"
+        ]
+      },
+      {
+        "title": "Good Will Hunting",
+        "year": 1997,
+        "budget": 10000000.0,
+        "revenue": 225933435.0,
+        "predicted_revenue": 26254465.56,
+        "genres": [
+          "Drama"
+        ]
+      },
+      {
+        "title": "Juno",
+        "year": 2007,
+        "budget": 7500000.0,
+        "revenue": 231411584.0,
+        "predicted_revenue": 27808215.365,
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Romance"
+        ]
+      },
+      {
+        "title": "The Passion of the Christ",
+        "year": 2004,
+        "budget": 30000000.0,
+        "revenue": 611899420.0,
+        "predicted_revenue": 78868321.785,
+        "genres": [
+          "Drama"
+        ]
+      },
+      {
+        "title": "Waitress",
+        "year": 2007,
+        "budget": 2000000.0,
+        "revenue": 22179430.0,
+        "predicted_revenue": 3191270.89,
+        "genres": [
+          "Comedy"
+        ]
+      },
+      {
+        "title": "Brokeback Mountain",
+        "year": 2005,
+        "budget": 14000000.0,
+        "revenue": 178043761.0,
+        "predicted_revenue": 27001987.415,
+        "genres": [
+          "Drama",
+          "Romance"
+        ]
+      },
+      {
+        "title": "Top Gun",
+        "year": 1986,
+        "budget": 15000000.0,
+        "revenue": 356830601.0,
+        "predicted_revenue": 63316202.49,
+        "genres": [
+          "Action",
+          "Romance",
+          "War"
+        ]
+      }
+    ],
+    "flops": [
+      {
+        "title": "The Adventurer: The Curse of the Midas Box",
+        "year": 2013,
+        "budget": 25000000.0,
+        "revenue": 6399.0,
+        "predicted_revenue": 36878785.835,
+        "genres": [
+          "Fantasy",
+          "Adventure",
+          "Family"
+        ]
+      },
+      {
+        "title": "Foodfight!",
+        "year": 2012,
+        "budget": 65000000.0,
+        "revenue": 73706.0,
+        "predicted_revenue": 199781991.675,
+        "genres": [
+          "Animation",
+          "Action",
+          "Comedy",
+          "Family"
+        ]
+      },
+      {
+        "title": "Down Terrace",
+        "year": 2009,
+        "budget": 31192.0,
+        "revenue": 10000.0,
+        "predicted_revenue": 21447360.025,
+        "genres": [
+          "Drama",
+          "Action",
+          "Comedy"
+        ]
+      },
+      {
+        "title": "Maniac",
+        "year": 2012,
+        "budget": 6000000.0,
+        "revenue": 31081.0,
+        "predicted_revenue": 48463717.26,
+        "genres": [
+          "Horror"
+        ]
+      },
+      {
+        "title": "Mi America",
+        "year": 2015,
+        "budget": 2100000.0,
+        "revenue": 3330.0,
+        "predicted_revenue": 5094095.885,
+        "genres": [
+          "Drama",
+          "Crime"
+        ]
+      },
+      {
+        "title": "Special",
+        "year": 2006,
+        "budget": 1000000.0,
+        "revenue": 7202.0,
+        "predicted_revenue": 9143013.35,
+        "genres": [
+          "Drama",
+          "Fantasy",
+          "Science Fiction"
+        ]
+      },
+      {
+        "title": "All The Queen's Men",
+        "year": 2001,
+        "budget": 15000000.0,
+        "revenue": 23000.0,
+        "predicted_revenue": 24562116.285,
+        "genres": [
+          "Action",
+          "Comedy",
+          "Drama",
+          "History"
+        ]
+      },
+      {
+        "title": "5 Days of War",
+        "year": 2011,
+        "budget": 20000000.0,
+        "revenue": 17479.0,
+        "predicted_revenue": 17061072.355,
+        "genres": [
+          "War",
+          "Drama"
+        ]
+      }
+    ],
+    "outliers": [
+      {
+        "title": "Avatar",
+        "year": 2009,
+        "budget": 237000000.0,
+        "revenue": 2787965087.0,
+        "vote_average": 7.2
+      },
+      {
+        "title": "The Avengers",
+        "year": 2012,
+        "budget": 220000000.0,
+        "revenue": 1519557910.0,
+        "vote_average": 7.4
+      },
+      {
+        "title": "Interstellar",
+        "year": 2014,
+        "budget": 165000000.0,
+        "revenue": 675120017.0,
+        "vote_average": 8.1
+      },
+      {
+        "title": "The Dark Knight Rises",
+        "year": 2012,
+        "budget": 250000000.0,
+        "revenue": 1084939099.0,
+        "vote_average": 7.6
+      },
+      {
+        "title": "Captain America: Civil War",
+        "year": 2016,
+        "budget": 250000000.0,
+        "revenue": 1153304495.0,
+        "vote_average": 7.1
+      },
+      {
+        "title": "The Dark Knight",
+        "year": 2008,
+        "budget": 185000000.0,
+        "revenue": 1004558444.0,
+        "vote_average": 8.2
+      },
+      {
+        "title": "Jurassic World",
+        "year": 2015,
+        "budget": 150000000.0,
+        "revenue": 1513528810.0,
+        "vote_average": 6.5
+      },
+      {
+        "title": "Titanic",
+        "year": 1997,
+        "budget": 200000000.0,
+        "revenue": 1845034188.0,
+        "vote_average": 7.5
+      },
+      {
+        "title": "Batman v Superman: Dawn of Justice",
+        "year": 2016,
+        "budget": 250000000.0,
+        "revenue": 873260194.0,
+        "vote_average": 5.7
+      },
+      {
+        "title": "The Lord of the Rings: The Return of the King",
+        "year": 2003,
+        "budget": 94000000.0,
+        "revenue": 1118888979.0,
+        "vote_average": 8.1
+      },
+      {
+        "title": "The Hobbit: An Unexpected Journey",
+        "year": 2012,
+        "budget": 250000000.0,
+        "revenue": 1021103568.0,
+        "vote_average": 7.0
+      },
+      {
+        "title": "Avengers: Age of Ultron",
+        "year": 2015,
+        "budget": 280000000.0,
+        "revenue": 1405403694.0,
+        "vote_average": 7.3
+      },
+      {
+        "title": "Guardians of the Galaxy",
+        "year": 2014,
+        "budget": 170000000.0,
+        "revenue": 773328629.0,
+        "vote_average": 7.9
+      },
+      {
+        "title": "Deadpool",
+        "year": 2016,
+        "budget": 58000000.0,
+        "revenue": 783112979.0,
+        "vote_average": 7.4
+      },
+      {
+        "title": "Minions",
+        "year": 2015,
+        "budget": 74000000.0,
+        "revenue": 1156730962.0,
+        "vote_average": 6.4
+      },
+      {
+        "title": "Inception",
+        "year": 2010,
+        "budget": 160000000.0,
+        "revenue": 825532764.0,
+        "vote_average": 8.1
+      },
+      {
+        "title": "Pirates of the Caribbean: At World's End",
+        "year": 2007,
+        "budget": 300000000.0,
+        "revenue": 961000000.0,
+        "vote_average": 6.9
+      },
+      {
+        "title": "Pirates of the Caribbean: On Stranger Tides",
+        "year": 2011,
+        "budget": 380000000.0,
+        "revenue": 1045713802.0,
+        "vote_average": 6.4
+      },
+      {
+        "title": "Transformers: Age of Extinction",
+        "year": 2014,
+        "budget": 210000000.0,
+        "revenue": 1091405097.0,
+        "vote_average": 5.8
+      },
+      {
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "year": 2001,
+        "budget": 93000000.0,
+        "revenue": 871368364.0,
+        "vote_average": 8.0
+      },
+      {
+        "title": "Pirates of the Caribbean: Dead Man's Chest",
+        "year": 2006,
+        "budget": 200000000.0,
+        "revenue": 1065659812.0,
+        "vote_average": 7.0
+      },
+      {
+        "title": "The Hobbit: The Desolation of Smaug",
+        "year": 2013,
+        "budget": 250000000.0,
+        "revenue": 958400000.0,
+        "vote_average": 7.6
+      },
+      {
+        "title": "Skyfall",
+        "year": 2012,
+        "budget": 200000000.0,
+        "revenue": 1108561013.0,
+        "vote_average": 6.9
+      },
+      {
+        "title": "Harry Potter and the Half-Blood Prince",
+        "year": 2009,
+        "budget": 250000000.0,
+        "revenue": 933959197.0,
+        "vote_average": 7.4
+      },
+      {
+        "title": "Mad Max: Fury Road",
+        "year": 2015,
+        "budget": 150000000.0,
+        "revenue": 378858340.0,
+        "vote_average": 7.2
+      },
+      {
+        "title": "Iron Man 3",
+        "year": 2013,
+        "budget": 200000000.0,
+        "revenue": 1215439994.0,
+        "vote_average": 6.8
+      },
+      {
+        "title": "The Hobbit: The Battle of the Five Armies",
+        "year": 2014,
+        "budget": 250000000.0,
+        "revenue": 956019788.0,
+        "vote_average": 7.1
+      },
+      {
+        "title": "Inside Out",
+        "year": 2015,
+        "budget": 175000000.0,
+        "revenue": 857611174.0,
+        "vote_average": 8.0
+      },
+      {
+        "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "year": 2003,
+        "budget": 140000000.0,
+        "revenue": 655011224.0,
+        "vote_average": 7.5
+      },
+      {
+        "title": "Spider-Man 3",
+        "year": 2007,
+        "budget": 258000000.0,
+        "revenue": 890871626.0,
+        "vote_average": 5.9
+      },
+      {
+        "title": "The Lord of the Rings: The Two Towers",
+        "year": 2002,
+        "budget": 79000000.0,
+        "revenue": 926287400.0,
+        "vote_average": 8.0
+      },
+      {
+        "title": "X-Men: Days of Future Past",
+        "year": 2014,
+        "budget": 250000000.0,
+        "revenue": 747862775.0,
+        "vote_average": 7.5
+      },
+      {
+        "title": "Frozen",
+        "year": 2013,
+        "budget": 150000000.0,
+        "revenue": 1274219009.0,
+        "vote_average": 7.3
+      },
+      {
+        "title": "Spectre",
+        "year": 2015,
+        "budget": 245000000.0,
+        "revenue": 880674609.0,
+        "vote_average": 6.3
+      },
+      {
+        "title": "Forrest Gump",
+        "year": 1994,
+        "budget": 55000000.0,
+        "revenue": 677945399.0,
+        "vote_average": 8.2
+      },
+      {
+        "title": "Man of Steel",
+        "year": 2013,
+        "budget": 225000000.0,
+        "revenue": 662845518.0,
+        "vote_average": 6.5
+      },
+      {
+        "title": "Big Hero 6",
+        "year": 2014,
+        "budget": 165000000.0,
+        "revenue": 652105443.0,
+        "vote_average": 7.8
+      },
+      {
+        "title": "Furious 7",
+        "year": 2015,
+        "budget": 190000000.0,
+        "revenue": 1506249360.0,
+        "vote_average": 7.3
+      },
+      {
+        "title": "Transformers: Dark of the Moon",
+        "year": 2011,
+        "budget": 195000000.0,
+        "revenue": 1123746996.0,
+        "vote_average": 6.1
+      },
+      {
+        "title": "2012",
+        "year": 2009,
+        "budget": 200000000.0,
+        "revenue": 769653595.0,
+        "vote_average": 5.6
+      },
+      {
+        "title": "The Amazing Spider-Man",
+        "year": 2012,
+        "budget": 215000000.0,
+        "revenue": 752215857.0,
+        "vote_average": 6.5
+      },
+      {
+        "title": "Harry Potter and the Chamber of Secrets",
+        "year": 2002,
+        "budget": 100000000.0,
+        "revenue": 876688482.0,
+        "vote_average": 7.4
+      },
+      {
+        "title": "Toy Story 3",
+        "year": 2010,
+        "budget": 200000000.0,
+        "revenue": 1066969703.0,
+        "vote_average": 7.6
+      },
+      {
+        "title": "Harry Potter and the Philosopher's Stone",
+        "year": 2001,
+        "budget": 125000000.0,
+        "revenue": 976475550.0,
+        "vote_average": 7.5
+      },
+      {
+        "title": "Suicide Squad",
+        "year": 2016,
+        "budget": 175000000.0,
+        "revenue": 745000000.0,
+        "vote_average": 5.9
+      },
+      {
+        "title": "The Godfather",
+        "year": 1972,
+        "budget": 6000000.0,
+        "revenue": 245066411.0,
+        "vote_average": 8.4
+      },
+      {
+        "title": "Alice in Wonderland",
+        "year": 2010,
+        "budget": 200000000.0,
+        "revenue": 1025491110.0,
+        "vote_average": 6.4
+      },
+      {
+        "title": "Pulp Fiction",
+        "year": 1994,
+        "budget": 8000000.0,
+        "revenue": 213928762.0,
+        "vote_average": 8.3
+      },
+      {
+        "title": "The Hunger Games: Mockingjay - Part 1",
+        "year": 2014,
+        "budget": 125000000.0,
+        "revenue": 752100229.0,
+        "vote_average": 6.6
+      },
+      {
+        "title": "Harry Potter and the Goblet of Fire",
+        "year": 2005,
+        "budget": 150000000.0,
+        "revenue": 895921036.0,
+        "vote_average": 7.5
+      },
+      {
+        "title": "The Martian",
+        "year": 2015,
+        "budget": 108000000.0,
+        "revenue": 630161890.0,
+        "vote_average": 7.6
+      },
+      {
+        "title": "Star Wars",
+        "year": 1977,
+        "budget": 11000000.0,
+        "revenue": 775398007.0,
+        "vote_average": 8.1
+      },
+      {
+        "title": "Up",
+        "year": 2009,
+        "budget": 175000000.0,
+        "revenue": 735099082.0,
+        "vote_average": 7.7
+      },
+      {
+        "title": "Dawn of the Planet of the Apes",
+        "year": 2014,
+        "budget": 170000000.0,
+        "revenue": 710644566.0,
+        "vote_average": 7.3
+      },
+      {
+        "title": "Iron Man",
+        "year": 2008,
+        "budget": 140000000.0,
+        "revenue": 585174222.0,
+        "vote_average": 7.4
+      },
+      {
+        "title": "Fight Club",
+        "year": 1999,
+        "budget": 63000000.0,
+        "revenue": 100853753.0,
+        "vote_average": 8.3
+      },
+      {
+        "title": "Despicable Me 2",
+        "year": 2013,
+        "budget": 76000000.0,
+        "revenue": 970761885.0,
+        "vote_average": 7.0
+      },
+      {
+        "title": "Schindler's List",
+        "year": 1993,
+        "budget": 22000000.0,
+        "revenue": 321365567.0,
+        "vote_average": 8.3
+      },
+      {
+        "title": "X-Men: Apocalypse",
+        "year": 2016,
+        "budget": 178000000.0,
+        "revenue": 543934787.0,
+        "vote_average": 6.4
+      },
+      {
+        "title": "The Shawshank Redemption",
+        "year": 1994,
+        "budget": 25000000.0,
+        "revenue": 28341469.0,
+        "vote_average": 8.5
+      },
+      {
+        "title": "Batman Begins",
+        "year": 2005,
+        "budget": 150000000.0,
+        "revenue": 374218673.0,
+        "vote_average": 7.5
+      },
+      {
+        "title": "Django Unchained",
+        "year": 2012,
+        "budget": 100000000.0,
+        "revenue": 425368238.0,
+        "vote_average": 7.8
+      },
+      {
+        "title": "Iron Man 2",
+        "year": 2010,
+        "budget": 200000000.0,
+        "revenue": 623933331.0,
+        "vote_average": 6.6
+      },
+      {
+        "title": "The Matrix",
+        "year": 1999,
+        "budget": 63000000.0,
+        "revenue": 463517383.0,
+        "vote_average": 7.9
+      },
+      {
+        "title": "Terminator Genisys",
+        "year": 2015,
+        "budget": 155000000.0,
+        "revenue": 440603537.0,
+        "vote_average": 5.8
+      },
+      {
+        "title": "The Revenant",
+        "year": 2015,
+        "budget": 135000000.0,
+        "revenue": 532950503.0,
+        "vote_average": 7.3
+      },
+      {
+        "title": "The Wolf of Wall Street",
+        "year": 2013,
+        "budget": 100000000.0,
+        "revenue": 392000694.0,
+        "vote_average": 7.9
+      },
+      {
+        "title": "The Hunger Games",
+        "year": 2012,
+        "budget": 75000000.0,
+        "revenue": 691210692.0,
+        "vote_average": 6.9
+      },
+      {
+        "title": "Quantum of Solace",
+        "year": 2008,
+        "budget": 200000000.0,
+        "revenue": 586090727.0,
+        "vote_average": 6.1
+      },
+      {
+        "title": "Finding Nemo",
+        "year": 2003,
+        "budget": 94000000.0,
+        "revenue": 940335536.0,
+        "vote_average": 7.6
+      },
+      {
+        "title": "Brave",
+        "year": 2012,
+        "budget": 185000000.0,
+        "revenue": 538983207.0,
+        "vote_average": 6.7
+      },
+      {
+        "title": "The Jungle Book",
+        "year": 2016,
+        "budget": 175000000.0,
+        "revenue": 966550600.0,
+        "vote_average": 6.7
+      },
+      {
+        "title": "Spider-Man 2",
+        "year": 2004,
+        "budget": 200000000.0,
+        "revenue": 783766341.0,
+        "vote_average": 6.7
+      },
+      {
+        "title": "The Amazing Spider-Man 2",
+        "year": 2014,
+        "budget": 200000000.0,
+        "revenue": 705717432.0,
+        "vote_average": 6.5
+      },
+      {
+        "title": "Maleficent",
+        "year": 2014,
+        "budget": 180000000.0,
+        "revenue": 758539785.0,
+        "vote_average": 7.0
+      },
+      {
+        "title": "Monsters, Inc.",
+        "year": 2001,
+        "budget": 115000000.0,
+        "revenue": 562816256.0,
+        "vote_average": 7.5
+      },
+      {
+        "title": "Gone Girl",
+        "year": 2014,
+        "budget": 61000000.0,
+        "revenue": 369330363.0,
+        "vote_average": 7.9
+      },
+      {
+        "title": "Gravity",
+        "year": 2013,
+        "budget": 105000000.0,
+        "revenue": 716392705.0,
+        "vote_average": 7.3
+      },
+      {
+        "title": "Men in Black 3",
+        "year": 2012,
+        "budget": 225000000.0,
+        "revenue": 624026776.0,
+        "vote_average": 6.2
+      },
+      {
+        "title": "WALL\u00b7E",
+        "year": 2008,
+        "budget": 180000000.0,
+        "revenue": 521311860.0,
+        "vote_average": 7.8
+      },
+      {
+        "title": "World War Z",
+        "year": 2013,
+        "budget": 200000000.0,
+        "revenue": 531865000.0,
+        "vote_average": 6.7
+      },
+      {
+        "title": "The Hunger Games: Catching Fire",
+        "year": 2013,
+        "budget": 130000000.0,
+        "revenue": 847423452.0,
+        "vote_average": 7.4
+      },
+      {
+        "title": "Captain America: The Winter Soldier",
+        "year": 2014,
+        "budget": 170000000.0,
+        "revenue": 714766572.0,
+        "vote_average": 7.6
+      },
+      {
+        "title": "Monsters University",
+        "year": 2013,
+        "budget": 200000000.0,
+        "revenue": 743559607.0,
+        "vote_average": 7.0
+      },
+      {
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "year": 2004,
+        "budget": 130000000.0,
+        "revenue": 789804554.0,
+        "vote_average": 7.7
+      },
+      {
+        "title": "Thor: The Dark World",
+        "year": 2013,
+        "budget": 170000000.0,
+        "revenue": 644571402.0,
+        "vote_average": 6.8
+      },
+      {
+        "title": "The Lion King",
+        "year": 1994,
+        "budget": 45000000.0,
+        "revenue": 788241776.0,
+        "vote_average": 8.0
+      },
+      {
+        "title": "King Kong",
+        "year": 2005,
+        "budget": 207000000.0,
+        "revenue": 550000000.0,
+        "vote_average": 6.6
+      },
+      {
+        "title": "The Hunger Games: Mockingjay - Part 2",
+        "year": 2015,
+        "budget": 160000000.0,
+        "revenue": 653428261.0,
+        "vote_average": 6.6
+      },
+      {
+        "title": "The Godfather: Part II",
+        "year": 1974,
+        "budget": 13000000.0,
+        "revenue": 47542841.0,
+        "vote_average": 8.3
+      },
+      {
+        "title": "Harry Potter and the Order of the Phoenix",
+        "year": 2007,
+        "budget": 150000000.0,
+        "revenue": 938212738.0,
+        "vote_average": 7.4
+      },
+      {
+        "title": "Jurassic Park",
+        "year": 1993,
+        "budget": 63000000.0,
+        "revenue": 920100000.0,
+        "vote_average": 7.6
+      },
+      {
+        "title": "The Green Mile",
+        "year": 1999,
+        "budget": 60000000.0,
+        "revenue": 284600000.0,
+        "vote_average": 8.2
+      },
+      {
+        "title": "The Imitation Game",
+        "year": 2014,
+        "budget": 14000000.0,
+        "revenue": 233555708.0,
+        "vote_average": 8.0
+      },
+      {
+        "title": "Gladiator",
+        "year": 2000,
+        "budget": 103000000.0,
+        "revenue": 457640427.0,
+        "vote_average": 7.9
+      },
+      {
+        "title": "Transformers: Revenge of the Fallen",
+        "year": 2009,
+        "budget": 150000000.0,
+        "revenue": 836297228.0,
+        "vote_average": 6.0
+      },
+      {
+        "title": "Tangled",
+        "year": 2010,
+        "budget": 260000000.0,
+        "revenue": 591794936.0,
+        "vote_average": 7.4
+      }
+    ]
+  }
+}

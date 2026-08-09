@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineGraph — Movie Industry Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Marquee ticker: scrolling highlight stats -->
+  <div class="marquee-bar" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span class="marquee-item">LOADING TONIGHT'S FEATURES&hellip;</span>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="sprocket-rail" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="eyebrow">A Data Mining &amp; ML Trade Report</p>
+      <h1 class="display-title">CINE<span class="accent">GRAPH</span></h1>
+      <p class="hero-subtitle">Five techniques. One dataset. What actually predicts a hit.</p>
+      <div class="hero-stats" id="heroStats">
+        <div class="stat-block"><span class="stat-number">&mdash;</span><span class="stat-label">Films analyzed</span></div>
+        <div class="stat-block"><span class="stat-number">&mdash;</span><span class="stat-label">Years covered</span></div>
+        <div class="stat-block"><span class="stat-number">&mdash;</span><span class="stat-label">Box office tracked</span></div>
+      </div>
+    </div>
+    <div class="sprocket-rail" aria-hidden="true"></div>
+  </header>
+
+  <nav class="section-nav">
+    <a href="#regression">Regression</a>
+    <a href="#fuzzy">Success Advisor</a>
+    <a href="#association">Association Rules</a>
+    <a href="#graph">Collaboration Graph</a>
+    <a href="#anomalies">Sleeper Hits &amp; Flops</a>
+  </nav>
+
+  <main>
+
+    <!-- REGRESSION -->
+    <section id="regression" class="report-section">
+      <h2 class="section-title"><span class="reel-number">01</span> Predicting Revenue</h2>
+      <p class="section-intro">Two versions of the same model: one that peeks at post-release popularity, and one that only knows what you'd know before the movie ever comes out.</p>
+
+      <div class="grid-two" id="regressionCards">
+        <div class="loading-card">Loading regression results&hellip;</div>
+      </div>
+
+      <div class="panel" id="regressionFeatures">
+        <h3 class="panel-title">What actually drives the pre-release prediction</h3>
+        <div id="featureBars" class="feature-bars"></div>
+      </div>
+    </section>
+
+    <!-- FUZZY ADVISOR -->
+    <section id="fuzzy" class="report-section alt-bg">
+      <h2 class="section-title"><span class="reel-number">02</span> The Success Advisor</h2>
+      <p class="section-intro">A fuzzy-logic system that reasons the way a studio executive might — "decent budget, hot genre, strong backing&hellip; probably does well." Try your own numbers below; this runs live.</p>
+
+      <div class="advisor-widget panel">
+        <form id="advisorForm" class="advisor-form">
+          <label>
+            Budget (USD)
+            <input type="range" id="budgetSlider" min="1000000" max="300000000" step="1000000" value="50000000">
+            <span id="budgetDisplay" class="mono-value">$50,000,000</span>
+          </label>
+          <label>
+            Genre
+            <select id="genreSelect"></select>
+          </label>
+          <label>
+            Production companies attached
+            <input type="range" id="studiosSlider" min="0" max="10" step="1" value="3">
+            <span id="studiosDisplay" class="mono-value">3</span>
+          </label>
+          <button type="submit" class="btn-primary">Run the Advisor</button>
+        </form>
+
+        <div class="advisor-result" id="advisorResult">
+          <p class="advisor-placeholder">Set your inputs and click "Run the Advisor" to get a live prediction.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3 class="panel-title">Genre popularity, from the data</h3>
+        <div id="genrePopularity" class="genre-bars"></div>
+      </div>
+    </section>
+
+    <!-- ASSOCIATION RULES -->
+    <section id="association" class="report-section">
+      <h2 class="section-title"><span class="reel-number">03</span> Association Rules</h2>
+      <p class="section-intro">What combinations of genre, cast, and director show up together far more than chance would predict — including a couple of very recognizable names.</p>
+
+      <h3 class="subsection-title">Genre-level patterns</h3>
+      <div id="genreRules" class="rules-list">
+        <div class="loading-card">Loading rules&hellip;</div>
+      </div>
+
+      <h3 class="subsection-title">People who move the needle</h3>
+      <div id="personRules" class="rules-list"></div>
+    </section>
+
+    <!-- GRAPH -->
+    <section id="graph" class="report-section alt-bg">
+      <h2 class="section-title"><span class="reel-number">04</span> The Collaboration Network</h2>
+      <p class="section-intro">Every actor and director who worked together becomes an edge in a graph. Some people show up as hubs connecting many circles; some circles barely connect to anyone else at all.</p>
+
+      <div class="grid-two">
+        <div class="panel">
+          <h3 class="panel-title">Bridges between circles</h3>
+          <p class="panel-note">Highest betweenness centrality — people who link otherwise separate groups of collaborators.</p>
+          <ol id="bridgesList" class="ranked-list"></ol>
+        </div>
+        <div class="panel">
+          <h3 class="panel-title">Most prolific collaborators</h3>
+          <p class="panel-note">Total film-collaborations, weighted by repeat work together.</p>
+          <ol id="collaboratorsList" class="ranked-list"></ol>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Collaboration clusters</h3>
+      <div id="communitiesGrid" class="communities-grid"></div>
+    </section>
+
+    <!-- ANOMALIES -->
+    <section id="anomalies" class="report-section">
+      <h2 class="section-title"><span class="reel-number">05</span> Sleeper Hits &amp; Flops</h2>
+      <p class="section-intro">Where the pre-release model was most wrong — in both directions.</p>
+
+      <div class="grid-two">
+        <div>
+          <h3 class="subsection-title good">Sleeper Hits</h3>
+          <div id="sleeperHits" class="movie-cards"></div>
+        </div>
+        <div>
+          <h3 class="subsection-title bad">Flops</h3>
+          <div id="flops" class="movie-cards"></div>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Statistical outliers overall</h3>
+      <p class="panel-note">Found independently via Isolation Forest — no prediction involved, just what stands out across budget, revenue, and ratings together.</p>
+      <div id="outliers" class="movie-cards"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>CineGraph &mdash; built with pandas, scikit-learn, scikit-fuzzy, mlxtend, and networkx. Dashboard served with Express; live prediction bridges to the original Python analysis code.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
