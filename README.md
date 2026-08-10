@@ -181,30 +181,39 @@ All five techniques run on the same real dataset and feed into one dashboard, ra
 
 ---
 
-## Project structure
+## Project Structure
+
+```text
 CineGraph/
 ├── data/
-│ ├── raw/ # tmdb_5000_movies.csv, tmdb_5000_credits.csv
-│ └── processed/ # cleaned data + trained models (generated, gitignored)
+│   ├── raw/                      # tmdb_5000_movies.csv, tmdb_5000_credits.csv
+│   └── processed/                # cleaned data + trained models (generated, gitignored)
+│
 ├── src/
-│ ├── data_prep.py # cleans and merges raw data
-│ ├── regression.py # hindsight vs. pre-release revenue models
-│ ├── fuzzy_logic.py # success-likelihood advisor
-│ ├── association_rules.py # genre/cast/director pattern mining
-│ ├── graph_analysis.py # collaboration network + centrality
-│ ├── anomaly_detection.py # sleeper hits, flops, statistical outliers
-│ ├── export_results.py # runs everything, exports to frontend/data/results.json
-│ └── predict_service.py # CLI bridge called by the Node backend
+│   ├── data_prep.py              # cleans and merges raw data
+│   ├── regression.py             # hindsight vs. pre-release revenue models
+│   ├── fuzzy_logic.py            # success-likelihood advisor
+│   ├── association_rules.py      # genre/cast/director pattern mining
+│   ├── graph_analysis.py         # collaboration network + centrality
+│   ├── anomaly_detection.py      # sleeper hits, flops, statistical outliers
+│   ├── export_results.py         # exports analytics to frontend/data/results.json
+│   └── predict_service.py        # CLI bridge called by the Node backend
+│
 ├── backend/
-│ ├── server.js # Express server + live prediction endpoint
-│ └── package.json
+│   ├── server.js                 # Express server + live prediction endpoint
+│   └── package.json
+│
 ├── frontend/
-│ ├── index.html
-│ ├── style.css
-│ ├── script.js
-│ └── data/results.json # precomputed results (generated)
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── data/
+│       └── results.json          # precomputed analytics results (generated)
+│
 ├── requirements.txt
 └── README.md
+```
+
 
 ---
 
