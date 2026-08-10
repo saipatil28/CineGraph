@@ -135,8 +135,6 @@ markdown
 
 A full-stack data mining and machine learning platform that analyzes ~4,800 films to uncover what actually predicts box-office success — combining regression, fuzzy logic, association rule mining, graph/network analysis, and anomaly detection into one interactive dashboard.
 
-**[Live Demo](#)** · **[Screenshots](#screenshots)**
-
 ---
 
 ## What this does
