@@ -92,7 +92,7 @@ Click Create repository
 GitHub will show you commands to connect your local repo — copy the ones under "…or push an existing repository from the command line," which look like:
 
 powershell
-git remote add origin https://github.com/YOUR-USERNAME/CineGraph.git
+git remote add origin https://github.com/saipatil28/CineGraph.git
 git branch -M main
 git push -u origin main
 Run those. Paste me the output — once your code is safely on GitHub, we'll tackle deployment (which needs a slightly different plan since your project mixes Node + Python, not just a static site).
